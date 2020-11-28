@@ -1,4 +1,0 @@
-[submodule "odoomoduleyess"]
-	path = odoomoduleyess
-	url = git@gitlab.com:Mondaymarket/odoomoduleyess.git
-	branch = master
