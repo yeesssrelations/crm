@@ -353,7 +353,7 @@ class InteractionOffre(models.Model):
 
 
 class InteractionFideliteBurn(models.Model):
-    _name = 'interaction.fidelite.burn'pre
+    _name = 'interaction.fidelite.burn'
     _rec_name = 'pers_inter_fidel'
 
     date_action_burn = fields.Datetime(help="Date action Burn", required=False, )
