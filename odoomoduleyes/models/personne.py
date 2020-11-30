@@ -8,6 +8,7 @@ class CrmPerson(models.Model):
 
     marque_code = fields.Many2one(comodel_name="person.marque", help="Code marque", required=True, )
     marque_libelle = fields.Char(related="marque_code.libelle_marque", help="Libelle Marque", required=False, )
+    prenom = fields.Char(string="", required=False, )
     source_code = fields.Many2one(comodel_name="person.source", help="Code source", required=True, )
     source_libelle = fields.Char(related="source_code.libelle_source", help="Libelle source", required=False, )
     id_cdp = fields.Char(compute='_compute_id', help="Identifiant", required=False, )
@@ -69,7 +70,7 @@ class Interaction(models.Model):
 
 
     date_interaction = fields.Date(help="Date Intéraction", required=False, )
-    prenom = fields.Char(string="", required=False, )
+    
     civilite = fields.Selection(string="", selection=[('m', 'M'), ('mr', 'Mr'), ], required=False, )
     interaction = fields.Many2one(comodel_name="interaction.interaction", help="Libellé Intéraction", required=True, )
     code_interaction = fields.Char(related="interaction.code_interaction", help="Code Intéraction", required=False, )
@@ -352,7 +353,7 @@ class InteractionOffre(models.Model):
 
 
 class InteractionFideliteBurn(models.Model):
-    _name = 'interaction.fidelite.burn'
+    _name = 'interaction.fidelite.burn'pre
     _rec_name = 'pers_inter_fidel'
 
     date_action_burn = fields.Datetime(help="Date action Burn", required=False, )
