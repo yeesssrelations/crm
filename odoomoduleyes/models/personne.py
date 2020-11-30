@@ -20,8 +20,10 @@ class CrmPerson(models.Model):
                                      selection=[('PP', ' PERSPONNE PHYSIQUE'), ('PM', ' PERSONNE MORALE'), ],
                                      required=False, )
     statut_personne = fields.Selection(help="Statut",
-                                       selection=[('00', 'PROSPECT'), ('01', 'CLIENT'), ('02', 'CANDIDAT'),
-                                                  ('03', ' FRANCHISE POTENTIEL'), ], required=False, )
+                                       selection=[('SP01', 'SP01'),('SP02', 'SP02'),('SP03', 'SP03'),
+                                       ('SP04', 'SP04'),('SP05', 'SP05'),('SP06', 'SP06'),
+                                       ('SP07', 'SP07'),('SP08', 'SP08'),('SP09', 'SP09'),
+                                       ('SP10', 'SP10'),  ], required=False, )
     libelle_statut_personne = fields.Char(help="Libelle statut", required=False, )
     role_personne = fields.Selection(help="", selection=[('reprentant PM', 'Reprentant PM'), ('aidant', 'Aidant'), ],
                                      required=False, )
