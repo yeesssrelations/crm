@@ -277,7 +277,7 @@ class InteractionCoupons(models.Model):
     libelle_coupon = fields.Char(help="Libellé Coupon",required=False, )
     type_coupon = fields.Char(help="Type Coupon", required=False, )
     statut_usage_coupon = fields.Selection(help="Statut Usage Coupon", selection=[('oui', 'Oui'), ('non', 'Non'),], required=False, )
-    lieu_usage_coupon = fields.Char(help="Lieu Usage Coupon", required=False, help="Code Postal")
+    lieu_usage_coupon = fields.Char(help="Lieu Usage Coupon", required=False)
     pers_inter_coupons = fields.Many2one(comodel_name="person.interaction", help="Code Intéraction", required=False, )
     id_interaction_cp = fields.Integer(related="pers_inter_coupons.id", help="Identifiant Intéraction", required=False, )
     id_pers_cdp_cp = fields.Char(related="pers_inter_coupons.id_code_person", help="Identifiant Personne", required=False, )
