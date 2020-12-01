@@ -37,11 +37,10 @@
             <field name="code_source">S04</field>
             <field name="libelle_source">OPERATION COMMERCIALE</field>
         </record>
-  <record id="src_id_04" model="person.source">
+        <record id="src_id_04" model="person.source">
             <field name="code_source">S05</field>
             <field name="libelle_source">SOGEC</field>
         </record>
-
 
 
          <record id="org_id_00" model="origine.recrutement">
