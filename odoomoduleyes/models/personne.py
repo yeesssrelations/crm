@@ -6,11 +6,11 @@ class CrmPerson(models.Model):
     _name = 'crm.lead'
     _inherit = 'crm.lead'
 
-    marque_code = fields.Many2one(comodel_name="person.marque", help="Code marque", required=True, )
+    marque_code = fields.Many2one(comodel_name="person.marque", help="Code marque", required=False, )
     marque_libelle = fields.Char(related="marque_code.libelle_marque", help="Libelle Marque", required=False, )
     prenom = fields.Char(string="", required=False, )
     civilite = fields.Selection(string="", selection=[('m', 'M'), ('mr', 'Mr'), ], required=False, )
-    source_code = fields.Many2one(comodel_name="person.source", help="Code source", required=True, )
+    source_code = fields.Many2one(comodel_name="person.source", help="Code source", required=False, )
     source_libelle = fields.Char(related="source_code.libelle_source", help="Libelle source", required=False, )
     id_cdp = fields.Char(compute='_compute_id', help="Identifiant", required=False, )
 
