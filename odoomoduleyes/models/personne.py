@@ -6,6 +6,9 @@ class CrmPerson(models.Model):
     _name = 'crm.lead'
     _inherit = 'crm.lead'
 
+    # Fix of ODOO BUG
+    visitor_sessions_count = fields.Integer('# Sessions', compute="_compute_visitor_sessions_count", groups="im_livechat.im_livechat_group_user")
+
     marque_code = fields.Many2one(comodel_name="person.marque", help="Code marque", required=False, )
     marque_libelle = fields.Char(related="marque_code.libelle_marque", help="Libelle Marque", required=False, )
     prenom = fields.Char(string="", required=False, )
