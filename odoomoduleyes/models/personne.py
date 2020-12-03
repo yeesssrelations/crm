@@ -46,7 +46,7 @@ class CrmPerson(models.Model):
     date_naissance_enfant1 = fields.Date(help="Date naissance enfant 1", required=False, )
     date_naissance_enfant2 = fields.Date(help="Date naissance enfant 2", required=False, )
     date_naissance_enfant3 = fields.Date(help="Date naissance enfant 3", required=False, )
-    interaction_ids = fields.One2many(comodel_name="person.interaction", inverse_name="lead_id", help="Intéractions",ondelete='cascade', required=False, )
+    interaction_ids = fields.One2many(comodel_name="person.interaction", inverse_name="lead_id", help="Intéractions", required=False, )
 
     statut_membre = fields.Char(help="Statut membre", required=False, )
     solde_compte_fidelite = fields.Float(help="Solde compte fidelité", required=False, selection=[('t', 'PA'),('E', 'Engagement'),('R', 'Relationnel'), ], )
@@ -79,7 +79,7 @@ class Interaction(models.Model):
     type_interaction = fields.Char(compute="_get_type_interaction", help="Type Intéraction", required=False, )
     libelle_type_interaction = fields.Char(compute="_get_libelle_type_interaction", help="Libellé Type Intéraction", required=False, )
     valeur_interaction = fields.Selection(help="Valeur Intéraction", selection=[('0', 'Oui'), ('1', 'Non'),('9', 'Pas de réponse'), ], required=False, )
-    lead_id = fields.Many2one(comodel_name="crm.lead", required=True, )
+    lead_id = fields.Many2one(comodel_name="crm.lead",ondelete='cascade' , required=True, )
     id_code_person = fields.Char(related="lead_id.id_cdp", help="Identifiant Personne", required=False, )
     id_personne_marque = fields.Char(related="lead_id.id_personne_marque", required=False, )
     marque_code = fields.Many2one(related="lead_id.marque_code", help="Code marque", required=False, )
