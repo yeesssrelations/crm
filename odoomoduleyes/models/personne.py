@@ -46,7 +46,7 @@ class CrmPerson(models.Model):
     date_naissance_enfant1 = fields.Date(help="Date naissance enfant 1", required=False, )
     date_naissance_enfant2 = fields.Date(help="Date naissance enfant 2", required=False, )
     date_naissance_enfant3 = fields.Date(help="Date naissance enfant 3", required=False, )
-    interaction_ids = fields.One2many(comodel_name="person.interaction", inverse_name="lead_id", help="Intéractions", required=False, )
+    interaction_ids = fields.One2many(comodel_name="person.interaction", inverse_name="lead_id", help="Intéractions",ondelete='cascade', required=False, )
 
     statut_membre = fields.Char(help="Statut membre", required=False, )
     solde_compte_fidelite = fields.Float(help="Solde compte fidelité", required=False, selection=[('t', 'PA'),('E', 'Engagement'),('R', 'Relationnel'), ], )
