@@ -21,6 +21,7 @@
             <field name="libelle_marque">YEESSS</field>
         </record>
 
+
          <record id="src_id_00" model="person.source">
             <field name="code_source">S01</field>
             <field name="libelle_source">SITE INTERNET</field>
@@ -37,10 +38,13 @@
             <field name="code_source">S04</field>
             <field name="libelle_source">OPERATION COMMERCIALE</field>
         </record>
-        <record id="src_id_04" model="person.source">
+        <record id="src_id_03" model="person.source">
             <field name="code_source">S05</field>
-            <field name="libelle_source">SOGEC</field>
+            <field name="libelle_source"> </field>
         </record>
+
+
+
 
 
          <record id="org_id_00" model="origine.recrutement">
@@ -246,6 +250,10 @@
         </record>
         <record id="prtc_id_13" model="participation.participation">
             <field name="code_participation">OP013</field>
+        </record>
+          <record id="prtc_id_14" model="participation.participation">
+            <field name="code_participation">AA44</field>
+              <field name="libelle_participation">Jeux Kimple Noel</field>
         </record>
 
 
