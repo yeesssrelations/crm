@@ -10,14 +10,17 @@
           <field name="inherit_id" ref="crm.crm_lead_view_form"/>
           <field name="arch" type="xml">
               <xpath expr="//field[@name='partner_name']" position="after">
-                  <field name="prenom"/>
                     <field name="secteur_activite_societe"/>
                     <field name="secteur_societe"/>
               </xpath>
               <xpath expr="//field[@name='function']" position="after">
                   <field name="prenom"/>
                   <field name="civilite"/>
-                    <field name="date_naissance"/>
+                  <field name="date_naissance"/>
+                  <field name="lead_creation_dt" invisible="1"/>
+                  <field name="is_new"/>
+                  <field name="is_birthday"/>
+                  <field name="abn_dt"/>
               </xpath>
 
               <xpath expr="//page[@name='extra']" position="before">
@@ -383,9 +386,12 @@
                                 <field name="code_operation"/>
                                 <field name="libelle_operation"/>
                                 <field name="date_participation"/>
+                                <field name="id_participation"/>
+                                <field name="conformite_participation"/>
                                 <field name="type_operation"/>
                                 <field name="res_participation"/>
                                  <field name="dotations"/>
+
                              </group>
                             <group> </group>
 
