@@ -14,8 +14,8 @@ class CrmPerson(models.Model):
     source_libelle = fields.Char(related="source_code.libelle_source", help="Libelle source", required=False, )
     id_cdp = fields.Char(compute='_compute_id', help="Identifiant", required=False, )
     prenom = fields.Char(string="", required=False, )
-    civilite = fields.Selection(string="", selection=[('m', 'M'), ('mr', 'Mr'), ('mme', 'MME'), ], required=False, )
-
+    civilite = fields.Selection(string="", selection=[('M', 'M'), ('Mr', 'Mr'), ('MME', 'MME'), ], required=False, )
+    date_creation = fields.Date(string="", required=False, )
     id_personne_marque = fields.Char(help="Identifiant Personne Marque", required=False, )
     type_id_marque = fields.Selection(help="ID Type Marque",
                                       selection=[('base_annonceur', 'base annonceur'), ('mobile', 'Mobile'), ('email', 'Email'), ('erp', 'Erp'), ('ss', 'SS'),
@@ -73,10 +73,10 @@ class CrmPerson(models.Model):
             if record.marque_code.code_marque:
                 record.id_cdp = record.marque_code.code_marque + str(record.id)
 
-    @api.depends('create_date')
+    @api.depends('date_creation')
     def _creation_date(self):
         for record in self:
-            record.lead_creation_dt = str(datetime.strptime(record.create_date.strftime("%Y-%m-%d"), "%Y-%m-%d")) if record.create_date else False
+            record.lead_creation_dt = str(datetime.strptime(str(record.date_creation), "%Y-%m-%d")) if record.date_creation else False
 
     @api.depends('lead_creation_dt')
     def _isNew(self):
@@ -242,7 +242,7 @@ class InteractionConsentement(models.Model):
     date_cnstm = fields.Date(help="Date Consentement", required=False, )
     code_cnstm = fields.Many2one(comodel_name="consentement.consentement", help="Code Consentement", required=False, )
     libelle_cnstm = fields.Char(related="code_cnstm.libelle_consentement", help="Libellé Consentement", )
-    support_cnstm = fields.Selection(help="Support Consentement", selection=[('email', 'email'), ('mobile', 'mobile'), ('telephone', 'téléphone'), ],
+    support_cnstm = fields.Selection(help="Support Consentement", selection=[('e-mail', 'e-mail'), ('mobile', 'mobile'), ('telephone', 'téléphone'), ],
                                      required=False, )
     valeur_cnstm = fields.Selection(help="Valeur Consentement", selection=[('0', 'OPT-IN NON'), ('1', 'OPT-IN OUI'), ('9', 'OUTPUT'), ], required=False, )
     pers_inter_cons = fields.Many2one(comodel_name="person.interaction", help="Code Intéraction", required=False, )
