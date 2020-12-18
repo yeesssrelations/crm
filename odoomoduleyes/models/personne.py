@@ -24,8 +24,8 @@ class CrmPerson(models.Model):
                                      selection=[('PP', ' PERSPONNE PHYSIQUE'), ('PM', ' PERSONNE MORALE'), ],
                                      required=False, )
     statut_personne = fields.Selection(help="Statut",
-                                       selection=[('SP00', 'PROSPECT'), ('SP01', 'CLIENT'), ('SP02', 'CANDIDAT'),
-                                                  ('SP03', 'FRANCHISE POTENTIEL'), ('SP04', 'FRANCHISE POTENTIEL'), ('SP05', 'MEMBER')], required=False, )
+                                       selection=[('SP01', 'PROSPECT'), ('SP02', 'CLIENT'), ('SP03', 'MEMBRE'),
+                                                  ('SP04', 'CANDIDAT'), ('SP05', 'FRANCHISE'), ('SP06', 'PARTICIPANT')], required=False, )
     libelle_statut_personne = fields.Char(help="Libelle statut", required=False, )
     role_personne = fields.Selection(help="", selection=[('reprentant PM', 'Reprentant PM'), ('aidant', 'Aidant'), ],
                                      required=False, )
