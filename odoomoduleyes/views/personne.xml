@@ -20,6 +20,7 @@
                   <field name="lead_creation_dt" invisible="1"/>
                   <field name="is_new"/>
                   <field name="is_birthday"/>
+                  <field name="date_creation"/>
                   <field name="abn_dt"/>
               </xpath>
 
