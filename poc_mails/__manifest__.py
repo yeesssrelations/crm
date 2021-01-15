@@ -21,10 +21,12 @@
     # any module necessary for this one to work correctly
     'depends': [
         'mass_mailing',
+        'marketing_automation',
     ],
 
     # always loaded
     'data': [
+        'datas/functions.xml',
         'views/mailing_mailing.xml',
         'views/mail_mail.xml',
     ],

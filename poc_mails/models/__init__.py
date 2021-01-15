@@ -2,3 +2,4 @@
 from . import mailing_mailing
 from . import mail_compose_message
 from . import mail_mail
+from . import set_values
