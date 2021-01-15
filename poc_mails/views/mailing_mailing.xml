@@ -14,5 +14,19 @@
                 <xpath expr="//field[@name='body_arch']" position="replace"/>
             </field>
         </record>
+
+        <record id="mailing_mailing_view_form_marketing_automation" model="ir.ui.view">
+            <field name="name">mailing.mailing.view.form.marketing.automation</field>
+            <field name="model">mailing.mailing</field>
+            <field name="inherit_id" ref="marketing_automation.mailing_mailing_view_form_marketing_automation"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='body_html']" position="attributes">
+                    <attribute name="widget"></attribute>
+                    <attribute name="options"></attribute>
+                    <attribute name="class"></attribute>
+                </xpath>
+                <xpath expr="//field[@name='body_arch']" position="replace"/>
+            </field>
+        </record>
     </data>
 </odoo>
