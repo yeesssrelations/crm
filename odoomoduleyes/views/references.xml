@@ -122,7 +122,10 @@
             <field name="code_interaction">IT11</field>
             <field name="libelle_interaction">COMMANDE</field>
         </record>
-
+        <record id="intera_id_11" model="interaction.interaction">
+            <field name="code_interaction">IT12</field>
+            <field name="libelle_interaction">FIDELITE</field>
+        </record>
 
         <record id="cnstm_id_00" model="consentement.consentement">
             <field name="code_consentement">OPT01</field>
