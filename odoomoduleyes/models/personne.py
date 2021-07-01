@@ -344,6 +344,7 @@ class InteractionCoupons(models.Model):
     type_coupon = fields.Char(label="Type Coupon", required=False, )
     statut_usage_coupon = fields.Selection(label="Statut Usage Coupon", selection=[('oui', 'Oui'), ('non', 'Non'), ], required=False, )
     lieu_usage_coupon = fields.Char(label="Lieu Usage Coupon", required=False)
+    enseigne_usage_coupon = fields.Char(label="Enseigne Usage Coupon", required=False)
     pers_inter_coupons = fields.Many2one(comodel_name="person.interaction", label="Code Intéraction", required=False, )
     id_interaction_cp = fields.Integer(related="pers_inter_coupons.id", label="Identifiant Intéraction", required=False, )
     id_pers_cdp_cp = fields.Char(related="pers_inter_coupons.id_code_person", label="Identifiant Personne", required=False, )

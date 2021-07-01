@@ -504,7 +504,8 @@
                                 <field name="date_telechargement_coupon"/>
                                 <field name="type_coupon"/>
                                 <field name="statut_usage_coupon"/>
-                                 <field name="lieu_usage_coupon"/>
+                                <field name="lieu_usage_coupon"/>
+                                <field name="enseigne_usage_coupon"/>
                              </group>
                             <group>
                             </group>
