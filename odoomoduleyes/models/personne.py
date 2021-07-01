@@ -451,7 +451,7 @@ class InteractionFideliteEarn(models.Model):
     _rec_name = 'pers_inter_fidel'
 
     date_action_earn = fields.Datetime(label="Date action Earn", required=False, )
-    type_action_earn = fields.Selection(label="Type action Earn", selection=[('T', 'PA'), ('E', 'Engagement'), ('R', 'Relationnel'), ], required=False, )
+    type_action_earn = fields.Selection(label="Type action Earn", selection=[('T', 'T'), ('E', 'Engagement'), ('R', 'Relationnel'), ], required=False, )
     nb_pa = fields.Integer(label="Nombre PA", required=False, )
     nature_earn = fields.Selection(label="Nature Earn", selection=[('P', 'point'), ('E', 'euros'), ], required=False, )
     affection_earn = fields.Char(label="Affectation Earn", required=False, )
