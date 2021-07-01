@@ -499,6 +499,7 @@
                     <sheet>
                          <group>
                             <group>
+                                <field name="code_coupon"/>
                                 <field name="gencode_coupon"/>
                                 <field name="libelle_coupon"/>
                                 <field name="date_telechargement_coupon"/>

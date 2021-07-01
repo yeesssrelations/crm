@@ -339,7 +339,8 @@ class InteractionCoupons(models.Model):
     _rec_name = 'pers_inter_coupons'
 
     date_telechargement_coupon = fields.Date(label="Date Téléchrgement Coupon", required=False, )
-    gencode_coupon = fields.Char(label="Code Coupon", required=False, )
+    gencode_coupon = fields.Char(label="Gen Code Coupon", required=False, )
+    code_coupon = fields.Char(label="Code Coupon", required=False, )
     libelle_coupon = fields.Char(label="Libellé Coupon", required=False, )
     type_coupon = fields.Char(label="Type Coupon", required=False, )
     statut_usage_coupon = fields.Selection(label="Statut Usage Coupon", selection=[('oui', 'Oui'), ('non', 'Non'), ], required=False, )
