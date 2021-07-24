@@ -54,7 +54,8 @@
                             <field name="date_acceptation_cgu"/>
                                <field name="affectation"/>
                             <field name="regime_matrimonial"/>
-                               <field name="composition_foyer"/>
+                            <field name="composition_foyer"/>
+                            <field name="cumul_pa"/>
                            </group>
                            <group string="QUALIFICATION">
                                <field name="date_naissance_conjoint"/>

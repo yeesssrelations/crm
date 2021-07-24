@@ -65,6 +65,15 @@ class CrmPerson(models.Model):
     is_new = fields.Integer(string="Welcome value", required=False, compute="_isNew")
     is_birthday = fields.Integer(string="Birthday", required=False, compute="_isBirthday")
     abn_dt = fields.Integer(string="Abonnement_dt", required=False, compute="_abn_date")
+    cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa')
+
+    @api.depends('interaction_ids')
+    def _compute_cumul_pa(self):
+        for this in self:
+            fidelite = self.env.ref('odoomoduleyes.intera_id_11')
+            fidelite_interactions = this.interaction_ids.filtered(lambda i: i.interaction == fidelite)
+            earns = fidelite_interactions.mapped('inter_fidel_earns.nb_pa')
+            this.cumul_pa = sum(earns)
 
     @api.depends('marque_code.code_marque')
     def _compute_id(self):
