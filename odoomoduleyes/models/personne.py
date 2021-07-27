@@ -65,11 +65,11 @@ class CrmPerson(models.Model):
     is_new = fields.Integer(string="Welcome value", required=False, compute="_isNew")
     is_birthday = fields.Integer(string="Birthday", required=False, compute="_isBirthday")
     abn_dt = fields.Integer(string="Abonnement_dt", required=False, compute="_abn_date")
-    cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa')
-    total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon')
-    total_coupon_used = fields.Integer("Cumul usage coupon", compute='_compute_total_coupon')
+    cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa', stored=True)
+    total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon', stored=True)
+    total_coupon_used = fields.Integer("Cumul usage coupon", compute='_compute_total_coupon', stored=True)
 
-    @api.depends('interaction_ids')
+    @api.depends('interaction_ids', 'interaction_ids.inter_fidel_earns')
     def _compute_cumul_pa(self):
         for this in self:
             fidelite = self.env.ref('odoomoduleyes.intera_id_11')
@@ -77,7 +77,7 @@ class CrmPerson(models.Model):
             earns = fidelite_interactions.mapped('inter_fidel_earns.nb_pa')
             this.cumul_pa = sum(earns)
 
-    @api.depends('interaction_ids')
+    @api.depends('interaction_ids', 'interaction_ids.inter_coupons')
     def _compute_total_coupon(self):
         for this in self:
             coupon = self.env.ref('odoomoduleyes.intera_id_03')
