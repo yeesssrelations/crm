@@ -65,9 +65,9 @@ class CrmPerson(models.Model):
     is_new = fields.Integer(string="Welcome value", required=False, compute="_isNew")
     is_birthday = fields.Integer(string="Birthday", required=False, compute="_isBirthday")
     abn_dt = fields.Integer(string="Abonnement_dt", required=False, compute="_abn_date")
-    cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa', stored=True)
-    total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon', stored=True)
-    total_coupon_used = fields.Integer("Cumul usage coupon", compute='_compute_total_coupon', stored=True)
+    cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa', store=True)
+    total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon', store=True)
+    total_coupon_used = fields.Integer("Cumul usage coupon", compute='_compute_total_coupon', store=True)
 
     @api.depends('interaction_ids', 'interaction_ids.inter_fidel_earns')
     def _compute_cumul_pa(self):
