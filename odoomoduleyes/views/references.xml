@@ -1,0 +1,361 @@
+<odoo>
+    <data>
+<record id="marq_id_00" model="person.marque">
+            <field name="code_marque">M0060</field>
+            <field name="libelle_marque">FUJI</field>
+        </record>
+         <record id="marq_id_01" model="person.marque">
+            <field name="code_marque">M0130</field>
+            <field name="libelle_marque">FROMAGERIE MILLERET</field>
+        </record>
+         <record id="marq_id_02" model="person.marque">
+            <field name="code_marque">M0090</field>
+            <field name="libelle_marque">I-TOU</field>
+        </record>
+         <record id="marq_id_03" model="person.marque">
+            <field name="code_marque">M0020</field>
+            <field name="libelle_marque">BVMR</field>
+        </record>
+         <record id="marq_id_04" model="person.marque">
+            <field name="code_marque">M0250</field>
+            <field name="libelle_marque">YEESSS</field>
+        </record>
+
+
+         <record id="src_id_00" model="person.source">
+            <field name="code_source">S01</field>
+            <field name="libelle_source">SITE INTERNET</field>
+        </record>
+          <record id="src_id_01" model="person.source">
+            <field name="code_source">S02</field>
+            <field name="libelle_source">STORE LOCATOR</field>
+        </record>
+          <record id="src_id_02" model="person.source">
+            <field name="code_source">S03</field>
+            <field name="libelle_source">ERP FACTURATION</field>
+        </record>
+          <record id="src_id_03" model="person.source">
+            <field name="code_source">S04</field>
+            <field name="libelle_source">OPERATION COMMERCIALE</field>
+        </record>
+        <record id="src_id_04" model="person.source">
+            <field name="code_source">S05</field>
+            <field name="libelle_source">SOGEC</field>
+        </record>
+         <record id="src_id_05" model="person.source">
+            <field name="code_source">S06</field>
+            <field name="libelle_source">KIMPLE</field>
+        </record>
+
+
+
+
+
+         <record id="org_id_00" model="origine.recrutement">
+            <field name="code_origine">OC01</field>
+            <field name="libelle_origine">Site internet</field>
+        </record>
+         <record id="org_id_01" model="origine.recrutement">
+            <field name="code_origine">OC02</field>
+            <field name="libelle_origine">seo</field>
+        </record>
+         <record id="org_id_02" model="origine.recrutement">
+            <field name="code_origine">OC03</field>
+            <field name="libelle_origine">sem</field>
+        </record>
+        <record id="org_id_04" model="origine.recrutement">
+            <field name="code_origine">OC04</field>
+            <field name="libelle_origine">fb</field>
+        </record>
+         <record id="org_id_05" model="origine.recrutement">
+            <field name="code_origine">OC05</field>
+            <field name="libelle_origine">on pack</field>
+        </record>
+          <record id="org_id_06" model="origine.recrutement">
+            <field name="code_origine">OC06</field>
+            <field name="libelle_origine">participation</field>
+        </record>
+
+
+
+        <record id="intera_id_00" model="interaction.interaction">
+            <field name="code_interaction">IT01</field>
+            <field name="libelle_interaction">CONSENTEMENT</field>
+        </record>
+        <record id="intera_id_01" model="interaction.interaction">
+            <field name="code_interaction">IT02</field>
+            <field name="libelle_interaction">ABONNEMENT</field>
+        </record>
+        <record id="intera_id_02" model="interaction.interaction">
+            <field name="code_interaction">IT03</field>
+            <field name="libelle_interaction">PARTICIPATION OPERATION</field>
+        </record>
+        <record id="intera_id_03" model="interaction.interaction">
+            <field name="code_interaction">IT04</field>
+            <field name="libelle_interaction">COUPON</field>
+        </record>
+        <record id="intera_id_04" model="interaction.interaction">
+            <field name="code_interaction">IT05</field>
+            <field name="libelle_interaction">CONSULTATION CONTENU</field>
+        </record>
+        <record id="intera_id_05" model="interaction.interaction">
+            <field name="code_interaction">IT06</field>
+            <field name="libelle_interaction">VISITE SITE</field>
+        </record>
+        <record id="intera_id_06" model="interaction.interaction">
+            <field name="code_interaction">IT07</field>
+            <field name="libelle_interaction">OFFRE</field>
+        </record>
+        <record id="intera_id_07" model="interaction.interaction">
+            <field name="code_interaction">IT08</field>
+            <field name="libelle_interaction">USAGE SERVICE</field>
+        </record>
+        <record id="intera_id_08" model="interaction.interaction">
+            <field name="code_interaction">IT09</field>
+            <field name="libelle_interaction">CONTACT</field>
+        </record>
+        <record id="intera_id_09" model="interaction.interaction">
+            <field name="code_interaction">IT10</field>
+            <field name="libelle_interaction">SOLLICITATION</field>
+        </record>
+        <record id="intera_id_10" model="interaction.interaction">
+            <field name="code_interaction">IT11</field>
+            <field name="libelle_interaction">COMMANDE</field>
+        </record>
+        <record id="intera_id_11" model="interaction.interaction">
+            <field name="code_interaction">IT12</field>
+            <field name="libelle_interaction">FIDELITE</field>
+        </record>
+
+        <record id="cnstm_id_00" model="consentement.consentement">
+            <field name="code_consentement">OPT01</field>
+            <field name="libelle_consentement">marque</field>
+        </record>
+         <record id="cnstm_id_01" model="consentement.consentement">
+            <field name="code_consentement">OPT02</field>
+            <field name="libelle_consentement">groupe</field>
+        </record>
+         <record id="cnstm_id_02" model="consentement.consentement">
+            <field name="code_consentement">OPT03</field>
+            <field name="libelle_consentement">partenaire</field>
+        </record>
+         <record id="cnstm_id_03" model="consentement.consentement">
+            <field name="code_consentement">OPT04</field>
+            <field name="libelle_consentement">cgu</field>
+        </record>
+         <record id="cnstm_id_04" model="consentement.consentement">
+            <field name="code_consentement">OPT05</field>
+            <field name="libelle_consentement">cgv</field>
+        </record>
+         <record id="cnstm_id_05" model="consentement.consentement">
+            <field name="code_consentement">OPT06</field>
+            <field name="libelle_consentement">Mise en relation</field>
+        </record>
+
+         <record id="cnstm_id_05" model="consentement.consentement">
+            <field name="code_consentement">OPT11</field>
+            <field name="libelle_consentement">thématique 1</field>
+        </record>
+         <record id="cnstm_id_06" model="consentement.consentement">
+            <field name="code_consentement">OPT12</field>
+            <field name="libelle_consentement">thématique 2</field>
+        </record>
+        <record id="cnstm_id_07" model="consentement.consentement">
+            <field name="code_consentement">OPT13</field>
+            <field name="libelle_consentement">thématique 3</field>
+        </record>
+        <record id="cnstm_id_08" model="consentement.consentement">
+            <field name="code_consentement">OPT14</field>
+            <field name="libelle_consentement">thématique 4</field>
+        </record>
+        <record id="cnstm_id_09" model="consentement.consentement">
+            <field name="code_consentement">OPT15</field>
+            <field name="libelle_consentement">thématique 5</field>
+        </record>
+        <record id="cnstm_id_10" model="consentement.consentement">
+            <field name="code_consentement">OPT16</field>
+            <field name="libelle_consentement">thématique 6</field>
+        </record>
+        <record id="cnstm_id_11" model="consentement.consentement">
+            <field name="code_consentement">OPT17</field>
+            <field name="libelle_consentement">thématique 7</field>
+        </record>
+        <record id="cnstm_id_12" model="consentement.consentement">
+            <field name="code_consentement">OPT18</field>
+            <field name="libelle_consentement">thématique 8</field>
+        </record>
+        <record id="cnstm_id_13" model="consentement.consentement">
+            <field name="code_consentement">OPT19</field>
+            <field name="libelle_consentement">thématique 9</field>
+        </record>
+         <record id="cnstm_id_14" model="consentement.consentement">
+            <field name="code_consentement">OPT20</field>
+            <field name="libelle_consentement">thématique 10</field>
+        </record>
+
+
+
+        <record id="abn_id_00" model="abonnement.abonnement">
+            <field name="code_abonnement">AB01</field>
+            <field name="libelle_abonnement">Newsletter</field>
+        </record>
+        <record id="abn_id_01" model="abonnement.abonnement">
+            <field name="code_abonnement">AB02</field>
+            <field name="libelle_abonnement">Inscription club</field>
+        </record>
+        <record id="abn_id_02" model="abonnement.abonnement">
+            <field name="code_abonnement">AB03</field>
+            <field name="libelle_abonnement">Espace privé</field>
+        </record>
+        <record id="abn_id_03" model="abonnement.abonnement">
+            <field name="code_abonnement">AB04</field>
+            <field name="libelle_abonnement">Alerte contenu</field>
+        </record>
+        <record id="abn_id_04" model="abonnement.abonnement">
+            <field name="code_abonnement">AB05</field>
+            <field name="libelle_abonnement">Bookmark contenu</field>
+        </record>
+
+
+
+
+        <record id="prtc_id_01" model="participation.participation">
+            <field name="code_participation">OP001</field>
+        </record>
+         <record id="prtc_id_02" model="participation.participation">
+            <field name="code_participation">OP002</field>
+        </record>
+         <record id="prtc_id_03" model="participation.participation">
+            <field name="code_participation">OP003</field>
+        </record>
+         <record id="prtc_id_04" model="participation.participation">
+            <field name="code_participation">OP004</field>
+        </record>
+        <record id="prtc_id_05" model="participation.participation">
+            <field name="code_participation">OP005</field>
+        </record>
+         <record id="prtc_id_06" model="participation.participation">
+            <field name="code_participation">OP006</field>
+        </record>
+        <record id="prtc_id_07" model="participation.participation">
+            <field name="code_participation">OP007</field>
+        </record>
+           <record id="prtc_id_08" model="participation.participation">
+            <field name="code_participation">OP008</field>
+        </record>
+         <record id="prtc_id_09" model="participation.participation">
+            <field name="code_participation">OP009</field>
+        </record>
+         <record id="prtc_id_10" model="participation.participation">
+            <field name="code_participation">OP010</field>
+        </record>
+        <record id="prtc_id_11" model="participation.participation">
+            <field name="code_participation">OP011</field>
+        </record>
+         <record id="prtc_id_12" model="participation.participation">
+            <field name="code_participation">OP012</field>
+        </record>
+        <record id="prtc_id_13" model="participation.participation">
+            <field name="code_participation">OP013</field>
+        </record>
+          <record id="prtc_id_14" model="participation.participation">
+            <field name="code_participation">AA44</field>
+              <field name="libelle_participation">Jeux Kimple Noel</field>
+        </record>
+
+
+        <record id="usage_id_00" model="usage.service">
+            <field name="code_usage">US01</field>
+            <field name="libelle_usage">Téléchargement dossier</field>
+        </record>
+         <record id="usage_id_01" model="usage.service">
+            <field name="code_usage">US02</field>
+            <field name="libelle_usage">Configurateur</field>
+        </record>
+         <record id="usage_id_02" model="usage.service">
+            <field name="code_usage">US03</field>
+            <field name="libelle_usage">Simulateur</field>
+        </record>
+         <record id="usage_id_03" model="usage.service">
+            <field name="code_usage">US04</field>
+            <field name="libelle_usage">Devis</field>
+        </record>
+         <record id="usage_id_04" model="usage.service">
+            <field name="code_usage">US05</field>
+            <field name="libelle_usage">Store locator</field>
+        </record>
+         <record id="usage_id_05" model="usage.service">
+            <field name="code_usage">US06</field>
+            <field name="libelle_usage">Transmettre un contenu</field>
+        </record>
+         <record id="usage_id_06" model="usage.service">
+            <field name="code_usage">US07</field>
+            <field name="libelle_usage">Bookmark d'un contenu</field>
+        </record>
+         <record id="usage_id_07" model="usage.service">
+            <field name="code_usage">US08</field>
+            <field name="libelle_usage">Programme coaching</field>
+        </record>
+
+
+
+        <record id="contact_id_00" model="contact.contact">
+            <field name="code_contact">OB01</field>
+            <field name="libelle_contact">Demande documentation</field>
+        </record>
+         <record id="contact_id_01" model="contact.contact">
+            <field name="code_contact">OB02</field>
+            <field name="libelle_contact">Demande de contact</field>
+        </record>
+         <record id="contact_id_02" model="contact.contact">
+            <field name="code_contact">OB03</field>
+            <field name="libelle_contact">Demande de rappel</field>
+        </record>
+         <record id="contact_id_03" model="contact.contact">
+            <field name="code_contact">OB04</field>
+            <field name="libelle_contact">Demande urgente</field>
+        </record>
+         <record id="contact_id_04" model="contact.contact">
+            <field name="code_contact">OB05</field>
+            <field name="libelle_contact">Demande de RDV</field>
+        </record>
+         <record id="contact_id_05" model="contact.contact">
+            <field name="code_contact">OB06</field>
+            <field name="libelle_contact">Demande de visite</field>
+        </record>
+         <record id="contact_id_06" model="contact.contact">
+            <field name="code_contact">OB07</field>
+            <field name="libelle_contact">Demande de réservation</field>
+        </record>
+         <record id="contact_id_07" model="contact.contact">
+            <field name="code_contact">OB08</field>
+            <field name="libelle_contact">Demande de devis</field>
+        </record>
+         <record id="contact_id_08" model="contact.contact">
+            <field name="code_contact">OB09</field>
+            <field name="libelle_contact">Demande de placement</field>
+        </record>
+         <record id="contact_id_09" model="contact.contact">
+            <field name="code_contact">OB10</field>
+            <field name="libelle_contact">Contacter un conseiller</field>
+        </record>
+         <record id="contact_id_10" model="contact.contact">
+            <field name="code_contact">OB11</field>
+            <field name="libelle_contact">Appel entrant national</field>
+        </record>
+         <record id="contact_id_11" model="contact.contact">
+            <field name="code_contact">OB12</field>
+            <field name="libelle_contact">Appel entrant point de vente</field>
+        </record>
+
+        <record id="offre_id_00" model="offre.offre">
+            <field name="code_offre">OF001</field>
+            <field name="libelle_offre">Parainnage</field>
+        </record>
+        <record id="offre_id_01" model="offre.offre">
+            <field name="code_offre">OF002</field>
+            <field name="libelle_offre">Remise 10%</field>
+        </record>
+
+    </data>
+</odoo>
