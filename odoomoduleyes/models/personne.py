@@ -68,11 +68,28 @@ class CrmPerson(models.Model):
     cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa', store=True)
     total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon', store=True)
     total_coupon_used = fields.Integer("Cumul usage coupon", compute='_compute_total_coupon', store=True)
+    nombre_coupon_telecharger = fields.Integer(
+        compute='_compute_coupon_usage_download', store=True)
+    nombre_coupon_utiliser = fields.Integer(
+        compute='_compute_coupon_usage_download', store=True)
+
+    @api.depends('interaction_ids', 'interaction_ids.inter_coupons',
+                 'interaction_ids.inter_coupons.statut_usage_coupon')
+    def _compute_coupon_usage_download(self):
+        for this in self:
+            coupon_downloaded = this.interaction_ids.inter_coupons.filtered(
+                lambda c: c.date_telechargement_coupon)
+            coupon_used = coupon_downloaded.filtered(
+                lambda c: c.statut_usage_coupon == 'oui')
+            this.update({
+                'nombre_coupon_telecharger': len(coupon_downloaded),
+                'nombre_coupon_utiliser': len(coupon_used)
+            })
 
     @api.depends('interaction_ids', 'interaction_ids.inter_fidel_earns')
     def _compute_cumul_pa(self):
         for this in self:
-            fidelite = self.env.ref('odoomoduleyes.intera_id_11')
+            fidelite = self.env.ref('odoomoduleyes.intera_id_11', raise_if_not_found=False)
             fidelite_interactions = this.interaction_ids.filtered(lambda i: i.interaction == fidelite)
             earns = fidelite_interactions.mapped('inter_fidel_earns.nb_pa')
             this.cumul_pa = sum(earns)
@@ -80,7 +97,7 @@ class CrmPerson(models.Model):
     @api.depends('interaction_ids', 'interaction_ids.inter_coupons')
     def _compute_total_coupon(self):
         for this in self:
-            coupon = self.env.ref('odoomoduleyes.intera_id_03')
+            coupon = self.env.ref('odoomoduleyes.intera_id_03', raise_if_not_found=False)
             fidelite_coupons = this.interaction_ids.filtered(
                 lambda i: i.interaction == coupon)
             inter_coupons = fidelite_coupons.mapped('inter_coupons')
