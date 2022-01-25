@@ -166,7 +166,7 @@
         </record>
         <record id="cnstm_id_08" model="consentement.consentement">
             <field name="code_consentement">OPT14</field>
-            <field name="libelle_consentement">thématique 4</field>
+            <field name="libelle_consentement">Code Anniversaire</field>
         </record>
         <record id="cnstm_id_09" model="consentement.consentement">
             <field name="code_consentement">OPT15</field>

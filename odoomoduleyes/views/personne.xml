@@ -320,6 +320,8 @@
                                 <field name="date_cnstm"/>
                                 <field name="support_cnstm"/>
                                 <field name="valeur_cnstm"/>
+                                <field name="code_anniversaire"/>
+
                              </group>
                             <group> </group>
                         </group>
