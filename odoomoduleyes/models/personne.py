@@ -263,6 +263,7 @@ class InteractionConsentement(models.Model):
     date_cnstm = fields.Date(label="Date Consentement", required=False, )
     code_cnstm = fields.Many2one(comodel_name="consentement.consentement", label="Code Consentement", required=False, )
     libelle_cnstm = fields.Char(related="code_cnstm.libelle_consentement", label="Libellé Consentement", )
+    code_anniversaire = fields.Char(label="Code anniversaire", required=False )
     support_cnstm = fields.Selection(label="Support Consentement", selection=[('e-mail', 'e-mail'), ('mobile', 'mobile'), ('telephone', 'téléphone'), ],
                                      required=False, )
     valeur_cnstm = fields.Selection(label="Valeur Consentement", selection=[('0', 'OPT-IN NON'), ('1', 'OPT-IN OUI'), ('9', 'OUTPUT'), ], required=False, )
