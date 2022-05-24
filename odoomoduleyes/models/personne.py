@@ -64,7 +64,7 @@ class CrmPerson(models.Model):
     lead_creation_dt = fields.Char(string="creation Date", compute="_creation_date")
     is_new = fields.Integer(string="Welcome value", required=False, compute="_isNew")
     is_birthday = fields.Integer(string="Birthday", required=False)
-    birthday_computed = fields.Integer(string="En mode anniversaire", required=False, compute="_birthday_computed")
+    birthday_computed = fields.Integer(string="En mode anniversaire", required=False, compute="_birthday_computed", store=True)
     abn_dt = fields.Integer(string="Abonnement_dt", required=False, compute="_abn_date")
     cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa', store=True)
     total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon', store=True)
