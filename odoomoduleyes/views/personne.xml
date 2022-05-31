@@ -21,6 +21,7 @@
                   <field name="is_new"/>
                   <field name="is_birthday"/>
                   <field name="birthday_computed"/>
+                  <field name="birthday_recomputed"/>
                   <field name="date_creation"/>
                   <field name="abn_dt"/>
               </xpath>

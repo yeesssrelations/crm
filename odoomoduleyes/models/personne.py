@@ -65,6 +65,7 @@ class CrmPerson(models.Model):
     is_new = fields.Integer(string="Welcome value", required=False, compute="_isNew")
     is_birthday = fields.Integer(string="Birthday", required=False)
     birthday_computed = fields.Integer(string="En mode anniversaire", required=False, compute="_birthday_computed", store=True)
+    birthday_recomputed = fields.Integer(string="En mode anniversaire 2", required=False, compute="_birthday_computed2", store=True)
     abn_dt = fields.Integer(string="Abonnement_dt", required=False, compute="_abn_date")
     cumul_pa = fields.Integer("Cumul PA", compute='_compute_cumul_pa', store=True)
     total_coupon = fields.Integer("Cumul téléchargement coupon", compute='_compute_total_coupon', store=True)
@@ -136,6 +137,20 @@ class CrmPerson(models.Model):
                 current_date = datetime.now()
                 if current_date.month == mnt and current_date.day == day:
                     record.birthday_computed = 1
+
+    @api.depends('date_naissance')
+    def _birthday_computed2(self):
+        for record in self:
+            record.birthday_recomputed = 0
+            if record.date_naissance:
+                date_naiss = datetime.strptime(str(record.date_naissance), "%Y-%m-%d")
+                mnt = date_naiss.month
+                day = date_naiss.day
+                current_date = datetime.now()
+                if current_date.month == mnt and current_date.day == day:
+                    record.birthday_recomputed = 1
+
+
 
     @api.depends('interaction_ids')
     def _abn_date(self):
