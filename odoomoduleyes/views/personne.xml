@@ -23,6 +23,7 @@
                   <field name="birthday_computed"/>
                   <field name="birthday_recomputed"/>
                   <field name="birthday_recomputedmonth"/>
+                  <field name="birthday_month"/>
                   <field name="date_creation"/>
                   <field name="abn_dt"/>
               </xpath>
