@@ -165,7 +165,7 @@ class CrmPerson(models.Model):
                     record.birthday_recomputedmonth = 1
 
     @api.depends('date_naissance')
-    def _birthday_computed3(self):
+    def _birthday_computed4(self):
         for record in self:
             record.birthday_month = 0
             if record.date_naissance:
