@@ -355,7 +355,7 @@ class InteractionParticipation(models.Model):
     date_participation = fields.Datetime(label="Date Participation", required=False, )
     code_operation = fields.Many2one(comodel_name="participation.participation", label="Code Opération", required=False, )
     libelle_operation = fields.Char(related="code_operation.libelle_participation", label="Libellé Opération", )
-    type_operation = fields.Selection(label="Type Opération", selection=[('blog', 'Blog'),('tas', 'TAS'),('odr', 'ODR'),('jeux', 'jeux'), ('concours,', 'concours'), ('activation', 'activation'), ],
+    type_operation = fields.Selection(label="Type Opération", selection=[('blog', 'blog'),('tas', 'tas'),('odr', 'odr'),('jeux', 'jeux'), ('concours,', 'concours'), ('activation', 'activation'), ],
                                       required=False, )
     res_participation = fields.Selection(label="Résultat Participation", selection=[('Gagne', 'Gagne'), ('Perdu', 'Perdu'), ], required=False, )
     dotations = fields.Char(label="Dotations", required=False, )
