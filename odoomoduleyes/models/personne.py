@@ -349,7 +349,7 @@ class InteractionAbonnement(models.Model):
 
 
 class InteractionParticipation(models.Model):
-    _name = 'interaction.participation'
+    _name = 'interaction.participation' 
     _rec_name = 'pers_inter_particip'
 
     date_participation = fields.Datetime(label="Date Participation", required=False, )
